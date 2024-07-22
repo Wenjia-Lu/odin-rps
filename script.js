@@ -39,9 +39,9 @@ function playRound(human, computer){
 }
 
 function playGame(){
-    for(let i = 0; i < 5; i++){
+    // for(let i = 0; i < 5; i++){
         playRound(getHumanChoice(), getComputerChoice());
-    }
+    // }
 
     console.log("Game Over.");
 
