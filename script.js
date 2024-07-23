@@ -1,16 +1,65 @@
 console.log("hello world")
 
 let humanScore = 0,
-    computerScore = 0;
+    botScore = 0;
 
-function getComputerChoice(){
+
+let humanSelectionDiv = document.querySelector(".human_selection");
+
+humanSelectionDiv.addEventListener("click", (e) => {
+    let c = e.target.id;
+
+    switch(c){
+        case 'r':
+            playRound('rock');
+            break;
+        case 'p':
+            playRound('paper');
+            break;
+        case 's':
+            playRound('scissor');
+            break;
+    }
+})
+
+let statusText = document.querySelector("#status");
+let humanStatusText = document.querySelector("#human_status");
+let botStatusText = document.querySelector("#bot_status");
+
+// 0 (tie), 1 (u won), 2 (bot won)
+function updateStatus(n, human, bot){
+    botStatusText.innerText = `Bot picked ${bot}.`;
+    humanStatusText.innerText = `You picked ${human}`;
+
+    switch(n){
+        case 0:
+            statusText.innerText = "It's a tie.";
+            break;
+        
+        case 1:
+            statusText.innerText = `Human won round :) ${human} beats ${bot}`;
+            break;
+
+        case 2:
+            statusText.innerText = `bot won round :( ${bot} beats ${human}`;
+            break;
+    }
+    
+    setTimeout(() => {
+        botStatusText.innerText = `bot is waiting...`;
+        statusText.innerText = `?`;
+        humanStatusText.innerText = 'Make your selection...';
+      }, 2500)
+}
+
+function getbotChoice(){
     let arr = ['rock', 'paper', 'scissor'];
     return arr[Math.floor((Math.random() * 3))];
 }
 
-function getHumanChoice(){
-    return prompt("Make your pick: 'rock', 'paper', or 'scissor'?");
-}
+// function getHumanChoice(){
+//     return prompt("Make your pick: 'rock', 'paper', or 'scissor'?");
+// }
 
 function checkWin(h, c){ // return true if human won
     switch(h){
@@ -23,30 +72,56 @@ function checkWin(h, c){ // return true if human won
     }
 }
 
-function playRound(human, computer){
-    let h = human.trim().charAt(0).toLowerCase();
-    let c = computer.charAt(0);
-    if (h == c) {
-        console.log("It's a tie.");
-    } else if (checkWin(h, c)) {
-        console.log(`Human won! ${human} beats ${computer}`);
-        humanScore++;
-    } 
-    else {
-        console.log(`Computer won! ${computer} beats ${human}`);
-        computerScore++;
+let desc = document.querySelector('#desc');
+
+function checkEnd(){
+    if (humanScore >= 5 || botScore >= 5){
+        (humanScore > botScore) ? console.log("You Won :)") : console.log("bot Won :(");
+        (humanScore > botScore) ? desc.innerText("You Won :)") : desc.innerText("bot Won :(");
     }
 }
 
-function playGame(){
-    // for(let i = 0; i < 5; i++){
-        playRound(getHumanChoice(), getComputerChoice());
-    // }
+let score_human = document.querySelector(".score_board #human");
+let score_bot = document.querySelector(".score_board #bot");
 
-    console.log("Game Over.");
-
-    (humanScore > computerScore) ? console.log("Human Won.") : console.log("Computer Won.");
+function updateHumanScore(){
+    humanScore++;
+    score_human.innerText = humanScore;
 }
 
-playGame();
+function updateBotScore(){
+    botScore++;
+    score_bot.innerText = botScore;
+}
+
+function playRound(human){
+    let h = human.charAt(0);
+    let bot = getbotChoice();
+    let c = bot.charAt(0);
+
+    if (h == c) {
+        console.log("It's a tie.");
+        updateStatus(0, human, bot);
+    } 
+    else if (checkWin(h, c)) {
+        console.log(`Human won :) ${human} beats ${bot}`);
+        updateStatus(1, human, bot);
+    } 
+    else {
+        console.log(`bot won :( ${bot} beats ${human}`);
+        updateStatus(2, human, bot)
+    }
+
+    checkEnd();
+}
+
+// function playGame(human){
+//     playRound(human);
+
+//     // console.log("Game Over.");
+
+//     (humanScore > botScore) ? console.log("You Won!") : console.log("bot Won :(");
+// }
+
+// playGame();
 

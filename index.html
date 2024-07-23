@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Rock Paper Scissors</title>
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 <body>
+    <h1> Rock Paper Scissor </h1>
+    <p id="desc"> First to 5 wins! Can you beat the bot? </p>
+
+    <span class="score_board"> 
+        <h2> current score: </h2> 
+        <h2 id="human"> 0 </h2>
+        <h2> : </h2>
+        <h2 id="bot"> 0 </h2>
+     </span> 
+
+    <h2 id="bot_status"> Computer is waiting... </h2>
+
+
+    <h2 id="status"> ? </h2>
+
+    <h2 id="human_status"> Make your selection... </h2>
+
+    <div class="human_selection">
+        <button class="card" id="r"> Rock </button>
+        <button class="card" id="p"> Paper </button>
+        <button class="card" id="s"> Scissor </button>
+    </div>
     
 </body>
 </html>
