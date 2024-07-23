@@ -1,7 +1,7 @@
-console.log("hello world")
 
 let humanScore = 0,
-    botScore = 0;
+    botScore = 0,
+    round = 0;
 
 
 let humanSelectionDiv = document.querySelector(".human_selection");
@@ -27,7 +27,7 @@ let humanStatusText = document.querySelector("#human_status");
 let botStatusText = document.querySelector("#bot_status");
 
 // 0 (tie), 1 (u won), 2 (bot won)
-function updateStatus(n, human, bot){
+function updateStatus(n, human, bot, r){
     botStatusText.innerText = `Bot picked ${bot}.`;
     humanStatusText.innerText = `You picked ${human}`;
 
@@ -46,9 +46,11 @@ function updateStatus(n, human, bot){
     }
     
     setTimeout(() => {
-        botStatusText.innerText = `bot is waiting...`;
-        statusText.innerText = `?`;
-        humanStatusText.innerText = 'Make your selection...';
+        if (r == round){
+            botStatusText.innerText = `bot is waiting...`;
+            statusText.innerText = `?`;
+            humanStatusText.innerText = 'Make your selection...';
+        }
       }, 2500)
 }
 
@@ -77,7 +79,7 @@ let desc = document.querySelector('#desc');
 function checkEnd(){
     if (humanScore >= 5 || botScore >= 5){
         (humanScore > botScore) ? console.log("You Won :)") : console.log("bot Won :(");
-        (humanScore > botScore) ? desc.innerText("You Won :)") : desc.innerText("bot Won :(");
+        (humanScore > botScore) ? desc.innerText = "You Won :)" : desc.innerText = "bot Won :(";
     }
 }
 
@@ -95,21 +97,24 @@ function updateBotScore(){
 }
 
 function playRound(human){
+    round++;
     let h = human.charAt(0);
     let bot = getbotChoice();
     let c = bot.charAt(0);
 
     if (h == c) {
         console.log("It's a tie.");
-        updateStatus(0, human, bot);
+        updateStatus(0, human, bot, round);
     } 
     else if (checkWin(h, c)) {
         console.log(`Human won :) ${human} beats ${bot}`);
-        updateStatus(1, human, bot);
+        updateStatus(1, human, bot, round);
+        updateHumanScore();
     } 
     else {
         console.log(`bot won :( ${bot} beats ${human}`);
-        updateStatus(2, human, bot)
+        updateStatus(2, human, bot, round);
+        updateBotScore();
     }
 
     checkEnd();

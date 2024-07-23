@@ -4,30 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Rock Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1> Rock Paper Scissor </h1>
+    <h1 id="name"> Rock Paper Scissor </h1>
     <p id="desc"> First to 5 wins! Can you beat the bot? </p>
 
-    <span class="score_board"> 
-        <h2> current score: </h2> 
-        <h2 id="human"> 0 </h2>
-        <h2> : </h2>
-        <h2 id="bot"> 0 </h2>
-     </span> 
+    <div id="score_board_container">
+        <h2>  current score </h2> 
+        <span class="score_board"> 
+            <h2 id="human"> 0 </h2>
+            <h2> : </h2>
+            <h2 id="bot"> 0 </h2>
+         </span> 
+    </div>
+    
 
-    <h2 id="bot_status"> Computer is waiting... </h2>
+    <div id = "status_container">
+
+        <div id="box">
+            <h2 id="bot_status"> Computer is waiting... </h2>
+        </div>
 
 
-    <h2 id="status"> ? </h2>
+        <h1 id="status"> ? </h2>
 
-    <h2 id="human_status"> Make your selection... </h2>
+        <div id="box">
+            <h2 id="human_status"> &gt; </h2>
+            <h2 id="human_status">  Make your selection... </h2>    
+        </div>
 
+    </div>
+    
     <div class="human_selection">
-        <button class="card" id="r"> Rock </button>
-        <button class="card" id="p"> Paper </button>
-        <button class="card" id="s"> Scissor </button>
+        <button class="card" id="r"> <img id="r" src="./imgs/rock.png" alt="rock image"> Rock </button>
+        <button class="card" id="s">  <img id = 's' src="./imgs/scissor.png" alt="scissor image"> Scissor </button>
+        <button class="card" id="p">  <img id='p' src="./imgs/paper.png" alt="paper image"> Paper </button>
+
     </div>
     
 </body>
