@@ -9,7 +9,16 @@ body{
     text-align: center;
     background-color: rgb(30, 30, 58);
     color: white;
+    /* height: 30vh; */
 }
+
+/* .game_screen{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 128px;
+    padding-bottom: 0;
+} */
 
 .human_selection img {
     width: 200px;
@@ -108,15 +117,16 @@ h1 {
 }
 
 #desc{
-    color: rgb(188, 136, 46);
+    /* color: rgb(188, 136, 46); */
+    color: rgb(251, 26, 139);
     font-size: large;
     
 }
 #score_board_container {
-    margin: 46px;
+    margin: 48px 0 18px 0;
     margin-bottom: 0px;
     padding: 0;
-    color:rgb(238, 72, 22);
+    color:rgb(255, 33, 59);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,9 +142,10 @@ h1 {
 
 #status_container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 64px;
     align-items: center;
-    margin: 32px 128px;
+    margin: 18px;
 }
 
 #box {
@@ -145,11 +156,11 @@ h1 {
 
 .footer{
     margin-top: 128px;
-    display: flex;
     background-color: black;
     justify-content: center;
     align-content: flex-start;
-    flex-grow: 1;
+    width: 100%;
+    padding: 18px;
 }
 
 /* #score_board_container h2, .score_board{

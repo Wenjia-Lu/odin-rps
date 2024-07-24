@@ -61,7 +61,7 @@ function updateStatus(n, human, bot, r){
             botTally.innerText = "";
             exp.innerText = "";
         }
-      }, 500)
+      }, 1000)
 
     setTimeout(() => {
         if (r == round){

@@ -8,59 +8,53 @@
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1 id="name"> Rock Paper Scissor </h1>
-    <p id="desc"> First to 5 wins! Can you beat the bot? </p>
+    <div class="game_screen">
+        <h1 id="name"> Rock Paper Scissor </h1>
+        <p id="desc"> First to 5 wins! Can you beat the bot? </p>
 
-    <div id="score_board_container">
-        <h2>  You : Bot </h2>   
-        <span class="score_board"> 
-            <h2 id="human"> 0 </h2>
-            <h2 id="human_add"></h2>
-            <h2> : </h2>
-            <h2 id="bot"> 0 </h2>
-            <h2 id="bot_add"></h2>
-         </span> 
-         <h2 class="exp"></h2>
-    </div>
-    
+        <div id="score_board_container">
+            <h2> You : Bot </h2>   
+            <span class="score_board"> 
+                <h2 id="human"> 0 </h2>
+                <h2 id="human_add"></h2>
+                <h2> : </h2>
+                <h2 id="bot"> 0 </h2>
+                <h2 id="bot_add"></h2>
+            </span> 
+            <h2 class="exp"></h2>
+        </div>
+        
 
-    <div id = "status_container">
+        <div id = "status_container">
 
-        <div id="box">
-            <h2 id="bot_status"> Computer is waiting... </h2>
+            <div id="box">
+                <h2 id="bot_status"> Computer is waiting... </h2>
+            </div>
+
+
+            <h1 id="status"> ? </h2>
+
+            <div id="box">
+                <h2 id = "is_human_selecting"> &gt; </h2>
+                <h2 id="human_status">  Make your selection... </h2>    
+            </div>
+
+        </div>
+        
+        <div class="human_selection">
+            <button class="card" id="r"> <img id="r" src="./imgs/rock.png" alt="rock image"> Rock </button>
+            <button class="card" id="s">  <img id = 's' src="./imgs/scissor.png" alt="scissor image"> Scissor </button>
+            <button class="card" id="p">  <img id='p' src="./imgs/paper.png" alt="paper image"> Paper </button>
+
         </div>
 
+        <div class="avatars">
+            <img src="./imgs/bot.png" alt="bot avatar">
+            <img src="./imgs/human.png" alt="human avatar">
 
-        <h1 id="status"> ? </h2>
-
-        <div id="box">
-            <h2 id = "is_human_selecting"> &gt; </h2>
-            <h2 id="human_status">  Make your selection... </h2>    
         </div>
-
-    </div>
-    
-    <div class="human_selection">
-        <button class="card" id="r"> <img id="r" src="./imgs/rock.png" alt="rock image"> Rock </button>
-        <button class="card" id="s">  <img id = 's' src="./imgs/scissor.png" alt="scissor image"> Scissor </button>
-        <button class="card" id="p">  <img id='p' src="./imgs/paper.png" alt="paper image"> Paper </button>
-
     </div>
 
-    <!-- <div class="footer">
-        <p> All rights reserved @ Wen's RPS project for &lt; The Odin Project &gt; </p>
-
-    </div>
-    <div class="footer">
-        <p> All rights reserved @ Wen's RPS project for &lt; The Odin Project &gt; </p> -->
-    
-    <div class="avatars">
-        <img src="./imgs/bot.png" alt="bot avatar">
-        <img src="./imgs/human.png" alt="human avatar">
-
-    </div>
-
-    </div>
     <div class="footer">
         <p> All art assets by me | All rights reserved @ my RPS project for &lt; The Odin Project &gt; </p>
 
