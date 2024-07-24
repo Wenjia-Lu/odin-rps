@@ -25,31 +25,50 @@ humanSelectionDiv.addEventListener("click", (e) => {
 let statusText = document.querySelector("#status");
 let humanStatusText = document.querySelector("#human_status");
 let botStatusText = document.querySelector("#bot_status");
+let arrow = document.querySelector("#is_human_selecting");
+let humanTally = document.querySelector("#human_add");
+let botTally = document.querySelector("#bot_add");
+let exp = document.querySelector(".exp");
+
 
 // 0 (tie), 1 (u won), 2 (bot won)
 function updateStatus(n, human, bot, r){
     botStatusText.innerText = `Bot picked ${bot}.`;
     humanStatusText.innerText = `You picked ${human}`;
+    arrow.innerText = "";
 
     switch(n){
         case 0:
-            statusText.innerText = "It's a tie.";
+            statusText.innerText = "TIE";
             break;
         
         case 1:
-            statusText.innerText = `Human won round :) ${human} beats ${bot}`;
+            statusText.innerText = 'WON';
+            exp.innerText =  `${human} beats ${bot}`;
+            humanTally.innerText = "+1";
             break;
 
         case 2:
-            statusText.innerText = `bot won round :( ${bot} beats ${human}`;
+            statusText.innerText = 'LOST';
+            exp.innerText = `${bot} beats ${human}`;
+            botTally.innerText = "+1";
             break;
     }
     
     setTimeout(() => {
         if (r == round){
+            humanTally.innerText = "";
+            botTally.innerText = "";
+            exp.innerText = "";
+        }
+      }, 500)
+
+    setTimeout(() => {
+        if (r == round){
             botStatusText.innerText = `bot is waiting...`;
             statusText.innerText = `?`;
             humanStatusText.innerText = 'Make your selection...';
+            arrow.innerText = ">";
         }
       }, 2500)
 }
