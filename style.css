@@ -12,13 +12,14 @@ body{
     /* height: 30vh; */
 }
 
-.game_screen{
+/* .game_screen{
     display: flex;
+    justify-content: space-around;
     flex-flow: column nowrap;
     align-items: center;
     padding: 0 128px;
     padding-bottom: 0;
-}
+} */
 
 .human_selection img {
     width: 200px;
@@ -98,7 +99,7 @@ button#s:hover {
 h1 {
     color: rgb(230, 199, 26);
     /* font-weight: bold; */
-    font-size: 70px;
+    font-size: 50px;
 }
 
 #name {
@@ -120,11 +121,11 @@ h1 {
     /* color: rgb(188, 136, 46); */
     color: rgb(251, 26, 139);
     font-size: large;
+    margin: 0;
     
 }
 #score_board_container {
-    margin: 48px 0 18px 0;
-    margin-bottom: 0px;
+    margin: 32px 0 18px 0;
     padding: 0;
     color:rgb(255, 33, 59);
     display: flex;
@@ -132,20 +133,22 @@ h1 {
     align-items: center;
     align-content: center;
     flex-flow: column nowrap;
-    font-size: 20px;
+    font-size: 16px;
     /* color: rgb(246, 214, 34); */
 }
 
 #human_status, #bot_status {
-    font-size: 30px;
+    margin-top: 0;
+    font-size: 22px;
 }
 
 #status_container {
     display: flex;
-    justify-content: space-between;
-    gap: 64px;
+    justify-content: center;
+    gap: 168px;
     align-items: center;
     margin: 18px;
+    transform:translateY(-30px);
 }
 
 #box {
