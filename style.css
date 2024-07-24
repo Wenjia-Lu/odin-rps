@@ -22,7 +22,7 @@ body{
 } */
 
 .human_selection img {
-    width: 200px;
+    width: 150px;
     margin-bottom: 8px;
 }
 
@@ -154,7 +154,7 @@ h1 {
 #box {
     display: flex;
     align-items: center;
-    width: 350px;
+    width: 300px;
 }
 
 .footer{
@@ -182,7 +182,7 @@ h1 {
 .avatars{
     display: flex;
     flex-flow: row nowrap;
-    gap: 800px;
+    gap: 600px;
     justify-content: center;
     position: relative;
     transform: translateY(-350px);

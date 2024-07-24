@@ -70,7 +70,7 @@ function updateStatus(n, human, bot, r){
             humanStatusText.innerText = 'Make your selection...';
             arrow.innerText = ">";
         }
-      }, 2500)
+      }, 2000)
 }
 
 function getbotChoice(){
