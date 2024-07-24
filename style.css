@@ -12,13 +12,13 @@ body{
     /* height: 30vh; */
 }
 
-/* .game_screen{
+.game_screen{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 128px;
+    padding: 0 128px;
     padding-bottom: 0;
-} */
+}
 
 .human_selection img {
     width: 200px;
